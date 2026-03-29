@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "denoland.vscode-deno",
+    "supabase.supabase-postgres-linter"
+  ]
+}

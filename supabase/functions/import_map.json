@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.1",
+    "edge-runtime-types": "https://raw.githubusercontent.com/supabase/functions-js/main/src/edge-runtime.d.ts",
+    "cors": "./_shared/cors.ts"
+  }
+}

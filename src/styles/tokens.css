@@ -1,0 +1,251 @@
+/* ============================================
+   STICKER POP PRO — Design Tokens
+   Single source of truth for all design tokens
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;900&display=swap');
+
+:root {
+  /* ---- Backgrounds ---- */
+  --color-bg: #f4f6ff;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef0ff;
+
+  /* ---- Core Palette ---- */
+  --color-electric: #3d5aff;
+  --color-electric-2: #2a45e8;
+  --color-purple: #7c3aff;
+  --color-cyan: #00d4ff;
+  --color-teal: #00c9a7;
+  --color-lime: #8fff00;
+  --color-yellow: #ffe600;
+  --color-orange: #ff6b00;
+  --color-red: #ff3b3b;
+  --color-ink: #0d0d1a;
+
+  /* ---- Sticker System ---- */
+  --sticker-outline: 3px solid #0d0d1a;
+  --sticker-outline-fat: 5px solid #0d0d1a;
+  --sticker-shadow: 4px 4px 0px #0d0d1a;
+  --sticker-shadow-lg: 6px 6px 0px #0d0d1a;
+  --sticker-radius: 16px;
+  --sticker-radius-lg: 22px;
+  --sticker-radius-pill: 12px;
+
+  /* ---- Typography ---- */
+  --font-display: 'Fredoka One', cursive;
+  --font-body: 'Nunito', sans-serif;
+
+  /* ---- Font Sizes ---- */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* ---- Semantic Colors ---- */
+  --color-accept: var(--color-teal);
+  --color-reject: var(--color-red);
+  --color-warning: var(--color-orange);
+  --color-primary: var(--color-electric);
+
+  /* ---- Spacing ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ---- Layout ---- */
+  --nav-height: 72px;
+  --sidebar-width: 260px;
+  --max-content: 1280px;
+  --panel-gap: 0px;
+
+  /* ---- Transitions ---- */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 350ms ease;
+
+  /* ---- Z-Index ---- */
+  --z-base: 1;
+  --z-nav: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+}
+
+/* ---- Global Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 700;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-electric);
+  border-radius: 4px;
+  border: 2px solid var(--color-bg);
+}
+
+/* ---- Global Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+}
+
+/* ---- Sticker Button Base ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  border: var(--sticker-outline);
+  border-radius: var(--sticker-radius-pill);
+  box-shadow: var(--sticker-shadow);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: var(--color-electric);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.btn-teal {
+  background: var(--color-teal);
+  color: #ffffff;
+}
+
+.btn-danger {
+  background: var(--color-red);
+  color: #ffffff;
+}
+
+.btn-lime {
+  background: var(--color-lime);
+  color: var(--color-ink);
+}
+
+/* ---- Sticker Card ---- */
+.card {
+  background: var(--color-surface);
+  border: var(--sticker-outline);
+  border-radius: var(--sticker-radius);
+  box-shadow: var(--sticker-shadow);
+  padding: var(--space-6);
+}
+
+.card-lg {
+  border-radius: var(--sticker-radius-lg);
+  box-shadow: var(--sticker-shadow-lg);
+  border: var(--sticker-outline-fat);
+}
+
+/* ---- Keyword Chip ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  background: #e8eaff;
+  border: 1.5px solid var(--color-electric);
+  color: var(--color-electric);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 900;
+}
+
+/* ---- Input ---- */
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: var(--sticker-outline);
+  border-radius: var(--sticker-radius-pill);
+  box-shadow: var(--sticker-shadow);
+  outline: none;
+  transition: box-shadow var(--transition-base);
+}
+
+.input:focus {
+  box-shadow: var(--sticker-shadow-lg);
+  border-color: var(--color-electric);
+}
+
+.input::placeholder {
+  color: #9ea3c0;
+}
+
+/* ---- Badge ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: var(--text-xs);
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+}
+
+/* ---- Utilities ---- */
+.display-font { font-family: var(--font-display); }
+.body-font { font-family: var(--font-body); }
+.text-electric { color: var(--color-electric); }
+.text-teal { color: var(--color-teal); }
+.text-orange { color: var(--color-orange); }
+.text-red { color: var(--color-red); }
+.text-ink { color: var(--color-ink); }
+.bg-electric { background: var(--color-electric); }
+.bg-surface { background: var(--color-surface); }
+.bg-surface-2 { background: var(--color-surface-2); }
